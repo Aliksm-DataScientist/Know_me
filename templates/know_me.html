@@ -1,0 +1,278 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Message Design</title>
+    <style>
+        body {
+            background-color: #121212; /* Dark theme background */
+            color: #ffffff; /* White text color for dark theme */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .chat-container {
+            background-color: #1e1e1e; /* Slightly lighter dark background */
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .profile-photo {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Circular photo */
+            background-image: url('default-photo.jpg'); /* Default profile photo */
+            background-size: cover;
+            background-position: center;
+        }
+        .chat-message {
+            margin-top: 20px;
+        }
+        .message {
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .message p {
+            margin: 0;
+        }
+        .user-question {
+            background-color: #2a2a2a; /* Dark message background for user question */
+            color: #4caf50; /* Green text for user question */
+        }
+        .assistant-answer {
+            background-color: #2a2a2a; /* Dark message background for assistant answer */
+            color: #ff9800; /* Orange text for assistant answer */
+        }
+        .center-image {
+            display: block;
+            margin: 20px auto; /* Center align the image with margin */
+            max-width: 100%; /* Ensure the image is responsive */
+        }
+    </style>
+</head>
+<body>
+    <img src="ALI(2) (1) (1).png" alt="Local Image" class="center-image">
+    <div class="chat-container">
+        <div class="chat-message">
+            <div class="message user-question">
+                <p>Hello! This is a sample chat message in a dark theme design.</p>
+            </div>
+            <div class="message assistant-answer">
+                <p>You can replace the default profile photo with your own local photo.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
+<!-- NEW CODE -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Message Design</title>
+    <style>
+        body {
+            background-color: #121212; /* Dark theme background */
+            color: #ffffff; /* White text color for dark theme */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .chat-container {
+            background-color: #1e1e1e; /* Slightly lighter dark background */
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .profile-photo {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Circular photo */
+            background-image: url('ALI(2) (1) (1).png'); /* Default profile photo */
+            background-size: cover;
+            background-position: center;
+        }
+        .chat-message {
+            margin-top: 20px;
+        }
+        .message {
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .message p {
+            margin: 0;
+        }
+        .user-question {
+            background-color: #2a2a2a; /* Dark message background for user question */
+            color: #ffffff; /* Green text for user question */
+            font-weight: bold;
+        }
+        .assistant-answer {
+            background-color: #2a2a2a; /* Dark message background for assistant answer */
+             /* Orange text for assistant answer */
+            color: #ffffff;
+        }
+        .center-image {
+            display: block;
+            margin: 20px auto; /* Center align the image with margin */
+            max-width: 100%; /* Ensure the image is responsive */
+        }
+        .input-container {
+            display: flex;
+            margin-top: 20px;
+        }
+        .input-container input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .input-container button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+        .role {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .name {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .inprogress {
+            
+            color: #4caf50;
+            font-size: 15px;
+            margin-bottom: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="ALI(2) (1) (1).png" alt="Local Image" class="center-image"> -->
+    <img src="/static/ALI(2) (1) (1).png" alt="Local Image" class="center-image">
+    <p class="name">Aliksm Shaik</p>
+    <b class="role">Generative AI Engineer & Data Scientist</b>
+    <b class="inprogress">Note: Development of this Application is In-Progress</b>
+    <div class="chat-container">
+        <div class="chat-message" id="chat-history">
+            <!-- Chat history will be dynamically inserted here -->
+        </div>
+        <div class="input-container">
+            <input type="text" id="user-question" placeholder="Type your question here (eg. what are the skills of Aliksm?)...">
+            <button onclick="sendQuestion()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        async function loadChatHistory() {
+            const response = await fetch('/chat_history.html');
+            const chatHistoryHtml = await response.text();
+            document.getElementById('chat-history').innerHTML = chatHistoryHtml;
+        }
+
+        async function sendQuestion() {
+            const questionInput = document.getElementById('user-question');
+            const question = questionInput.value;
+            if (question.trim() === "") return;
+
+            // Send the question to the Python backend
+            const response = await fetch('/ask-question', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question: question }),
+            });
+            const data = await response.json();
+            
+            // Update chat history
+            const chatHistoryDiv = document.getElementById('chat-history');
+            chatHistoryDiv.innerHTML += `
+                <div class="message user-question">
+                    <p>${data.question}</p>
+                </div>
+                <div class="message assistant-answer">
+                    <p>${data.answer}</p>
+                </div>
+            `;
+            questionInput.value = ""; // Clear input field
+        }
+
+        // Load chat history when the page loads
+        window.onload = loadChatHistory;
+    </script>
+</body>
+</html>
+
+
+    <script>
+        async function loadChatHistory() {
+            const response = await fetch('chat_history.html');
+            const chatHistoryHtml = await response.text();
+            document.getElementById('chat-history').innerHTML = chatHistoryHtml;
+        }
+
+        async function sendQuestion() {
+            const questionInput = document.getElementById('user-question');
+            const question = questionInput.value;
+            if (question.trim() === "") return;
+
+            // Send the question to the Python backend
+            const response = await fetch('/ask-question', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question: question }),
+            });
+            const data = await response.json();
+            
+            // Update chat history
+            const chatHistoryDiv = document.getElementById('chat-history');
+            chatHistoryDiv.innerHTML += `
+                <div class="message user-question">
+                    <p>${data.question}</p>
+                </div>
+                <div class="message assistant-answer">
+                    <p>${data.answer}</p>
+                </div>
+            `;
+            questionInput.value = ""; // Clear input field
+        }
+
+        // Load chat history when the page loads
+        window.onload = loadChatHistory;
+    </script>
+</body>
+</html>
+
+
