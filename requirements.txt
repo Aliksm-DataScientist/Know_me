@@ -1,11 +1,11 @@
 Flask==2.2.5
 gunicorn==21.2.0
 
-langchain==0.1.13  # Downgraded for compatibility
-langchain-community==0.0.31
-langchain-core==0.1.41
-langchain-huggingface==0.1.2
-langchain-groq==0.2.3  # Latest stable but compatible
+langchain==0.1.12  # Downgraded for stability
+langchain-community==0.0.30
+langchain-core==0.1.40  # Matches dependencies correctly
+langchain-huggingface==0.1.1
+langchain-groq==0.2.2  # Stable version
 
 faiss-cpu==1.7.4
 pypdf==3.17.2
