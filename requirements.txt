@@ -1,9 +1,0 @@
-Flask
-langchain
-langchain-community
-langchain-core
-langchain-huggingface
-langchain-groq
-faiss-cpu
-pypdf
-gunicorn
