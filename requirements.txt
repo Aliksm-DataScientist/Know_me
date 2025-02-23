@@ -2,8 +2,8 @@ Flask==2.2.5
 gunicorn==21.2.0
 
 langchain==0.1.15
-langchain-community==0.0.32  # Updated to match langchain
-langchain-core==0.1.37
+langchain-community==0.0.32  # Matches langchain
+langchain-core==0.1.41  # Matches langchain's requirement
 langchain-huggingface==0.1.1
 langchain-groq==0.2.2
 
