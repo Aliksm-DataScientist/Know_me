@@ -1,10 +1,10 @@
 Flask==2.2.5
 gunicorn==21.2.0
 
-langchain
-langchain-community
-langchain-huggingface
+langchain-core==0.1.42
+langchain-community==0.0.33
 langchain-groq==0.2.4
+langchain-huggingface==0.1.2
 
 faiss-cpu==1.7.4
 pypdf==3.17.2
